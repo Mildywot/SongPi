@@ -35,13 +35,15 @@ The script creates a virtual environment in the current folder and installs four
 Double click the 'Start.bat' file, it loads a virtual Python environment and runs the SongPi code for you.
 
 # Examples:
-## Full screen
-<img src="readme_images/JVB_fullscreen.png" style="width: 100%;" alt="Click to see the source">
-
-
 ## Windowed
 <img src="readme_images/Oshun-El-eee_windowed.png" style="width: 100%;" alt="Click to see the source">
 
+<img src="readme_images/banger_windowed.png" style="width: 100%;" alt="Click to see the source">
+
+## Full screen
+<img src="readme_images/JVB_fullscreen.png" style="width: 100%;" alt="Click to see the source">
+
+<img src="readme_images/divorced-aussie-dad-tunes_fullscreen.png" style="width: 100%;" alt="Click to see the source">
 
 ## Tips:
 
