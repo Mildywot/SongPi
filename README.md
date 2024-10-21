@@ -4,10 +4,11 @@ This project sets up a Python environment for recognizing songs using Shazamio, 
 
 The following versions are available: 
 - Raspberry Pi
-- Windows (easy zip package that includes everything you need, just click the .exe to run)
-- Windows (less easy, installs 
+- Windows (easy as: zip package that is already set up, just click the .exe to run)
+- Windows (less easy: installs a virtual Python environment and uses a script to run SongPi)
 
-
+## Raspberry Pi
+### 1. Install Python 
 
 
 ## Less easy Windows mode setup instructions
