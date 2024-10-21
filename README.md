@@ -1,5 +1,10 @@
 # SongPi - Song Recognition with Blurred Background
 
+I wanted a program that could run continuously to recognise songs I'd play on vinyl records: 
+- couldn't find one
+- tried to make one (cheers ChatGPT for the help)
+- somehow works?!
+
 This project sets up a Python environment for recognizing songs using Shazamio, displaying album art with a blurred background, and dynamically adjusting text color based on background brightness. 
 It uses Tkinter for the GUI and PyAudio for recording audio.
 
@@ -93,6 +98,9 @@ Double click the 'Start.bat' file, it loads a virtual Python environment and run
 
 - Press Esc button to toggle between full screen and windowed mode, feel free to resize the window to your heart's content.
 - Make sure your PC has a microphone (USB and built-in mics work well I think, haven't tested much else)
-- Enjoy?! Let me know if you like it or have suggestions
+- Enjoy?! 
+
+I'm surprised this works at all to be honest
+Let me know if you like it or have suggestions (especially for a better name, 'SongPi' is trash lol)
 
 Cheers.
