@@ -9,7 +9,10 @@ The following versions are available:
 
 ## Raspberry Pi
 ### 1. Install Python 
-
+```
+sudo apt update
+sudo apt upgrade
+```
  
 
 ## Less easy Windows mode setup instructions
@@ -47,8 +50,8 @@ Double click the 'Start.bat' file, it loads a virtual Python environment and run
 
 ## Tips:
 
-- Press Esc button to toggle between full screen and windowed mode, feel free to resize to whatever you want.
-- Make sure your PC has a microphone (USB and built-in mics work well I think, haven't test much else)
+- Press Esc button to toggle between full screen and windowed mode, feel free to resize the window to your heart's content.
+- Make sure your PC has a microphone (USB and built-in mics work well I think, haven't tested much else)
 - Enjoy?!
 
 Cheers.
