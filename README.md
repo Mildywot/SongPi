@@ -1,4 +1,4 @@
-# SongPi - Song Recognition with Blurred Background
+# SongPi - Song Recognition app written in Python
 
 I wanted a program that could run continuously to recognise songs I'd play on vinyl records: 
 - couldn't find one
