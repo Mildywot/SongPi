@@ -1,0 +1,22 @@
+{
+    "audio": {
+        "format": "paInt16",
+        "channels": 1,
+        "sample_rate": 48000,
+        "chunk_size": 8192,
+        "record_seconds": 4,
+        "device_index": 2
+    },
+    "gui": {
+        "update_interval": 5000,
+        "image_resize": [550, 550],
+        "blur_strength": 10,
+        "border_size_ratio": 0.20,
+        "base_font_size": 10
+    },
+    "network": {
+        "timeout": 10,
+        "retry_count": 5,
+        "retry_delay": 2
+    }
+}
