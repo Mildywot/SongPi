@@ -16,7 +16,7 @@ The following versions are available:
 <details>
    <summary><h2>Raspberry Pi version</h2></summary>
 
-### 1. Grab songpi.py and config.json file from [here](https://github.com/Mildywot/SongPi/tree/67d5aef5c0a94f321f2f83b06a3344e9e8749d90/SongPi%20-%20Pi%20version)
+### 1. Grab songpi.py and config.json file from [here](https://github.com/Mildywot/SongPi/tree/67d5aef5c0a94f321f2f83b06a3344e9e8749d90/SongPi%20-%20Pi%20version) and chuck them in a new folder
 
 ### 2. Install Python 
 In terminal, update the package list & install Python:
