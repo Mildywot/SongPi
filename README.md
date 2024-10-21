@@ -10,7 +10,7 @@ The following versions are available:
 ## Raspberry Pi
 ### 1. Install Python 
 
-
+ 
 
 ## Less easy Windows mode setup instructions
 
