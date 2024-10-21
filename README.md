@@ -37,17 +37,18 @@ deactivate
 ```
 </details>
 
+<details>
+   <summary><h2>Portable Windows setup instructions</h2></summary>
 
-<details> <summary>Portable Windows setup instructions</summary>
 ### 1. Download the folder 
-
 
 ### 2. Extract the zip and run ***SongPi.exe***
 Thats it
 </details> 
 
-## Full Windows setup instructions
-
+<details>
+   <summary><h2>Full Windows setup instructions</h2></summary>
+   
 ### 1. Install Python
 
 Install Python 3.12.3 from the Python website: https://www.python.org/downloads/release/python-3123/ 
@@ -67,6 +68,7 @@ The script creates a virtual environment in Files\venv within your current folde
 ### 3. Run the script
 
 Double click the 'Start.bat' file, it loads a virtual Python environment and runs the SongPi code for you.
+</details> 
 
 # Examples:
 ## Windowed
