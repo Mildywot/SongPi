@@ -16,14 +16,16 @@ The following versions are available:
 
 ### 1. Install Python
 
-Install Python by running 'python-3.12.3.exe', or from the Python website: https://www.python.org/downloads/release/python-3123/
+Install Python 3.12.3 from the Python website: https://www.python.org/downloads/release/python-3123/ 
+(other Python versions probably work fine, just haven't tested them)
 
 ***Make sure that you select the 'add python.exe to PATH' option during the install.***
 
 
 ### 2. Run the Setup Script
 
-Double click '1st time setup.bat' and let the script run until it finishes, if you get an error then try run it again I reckon.
+Double click '1st time setup.bat' and let the script run until it finishes, if you get an error then try run it again I reckon. 
+The script creates a virtual environment in the current folder and installs four Python packages (pyaudio, shazamio, requests, and pillow screeninfo) using pip install.
 
 ***Once you've done the above setup the first time, you can just click the Start.bat file next time you want to run the program***
 
