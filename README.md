@@ -1,4 +1,4 @@
-# Song Recognition with Blurred Background
+# SongPi (shitty name, I know) - Song Recognition with Blurred Background
 
 This project sets up a Python environment for recognizing songs using Shazamio, displaying album art with a blurred background, and dynamically adjusting text color based on background brightness. The project uses Tkinter for the GUI and PyAudio for recording audio.
 
@@ -9,24 +9,28 @@ The following versions are available:
 
 ## Raspberry Pi
 ### 1. Install Python 
-Update the package list:
+Update the package list & install Python:
 ```
 sudo apt update
 sudo apt upgrade
-```
-Install Python:
-```
 sudo apt install python3
 ```
-Create a virtual environment in the current folder:
+### 2. Create a virtual environment in the current folder and activate it
 ```
 python3 -m venv venv
-```
-Activate the virtual Python environment:
-```
 source venv/bin/activate
 ```
+### 3. 
+Install the required dependicies: 
+```
+pip install pyaudio shazamio requests pillow screeninfo
+```
+### 4. Run SongPi
 
+When you're done, deactivate the virtual environment by running:
+```
+deactivate
+```
 
 ## Less easy Windows mode setup instructions
 
