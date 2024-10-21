@@ -10,24 +10,26 @@ The following versions are available:
 
 <details>
    <summary><h2>Raspberry Pi version</h2></summary>
-   
-### 1. Install Python 
-Update the package list & install Python:
+
+### 1. Grab songpi.py and config.json file from [here](https://github.com/Mildywot/SongPi/tree/c6ab3cab16ed6bc30491c0e1b4d54b27bd9d536d/SongPi%20-%20Pi%20version)
+
+### 2. Install Python 
+In terminal, update the package list & install Python:
 ```
 sudo apt update
 sudo apt upgrade
 sudo apt install python3
 ```
-### 2. Create a virtual environment in the current folder and activate it
+### 3. Create a virtual environment in the current folder and activate it
 ```
 python3 -m venv venv
 source venv/bin/activate
 ```
-### 3. Install the required dependicies: 
+### 4. Install the required dependicies: 
 ```
 pip install pyaudio shazamio requests pillow screeninfo
 ```
-### 4. Run SongPi
+### 5. Run SongPi
 ```
 python shazam.py
 ```
