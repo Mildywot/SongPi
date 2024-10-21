@@ -39,7 +39,7 @@ deactivate
 ### 1. Download the zip file here:
 
 
-### 2. Extract the zip and run SongPi.exe
+### 2. Extract the zip and run ***SongPi.exe***
 Thats it
 
 ## Full Windows setup instructions
