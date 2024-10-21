@@ -100,7 +100,8 @@ Double click the 'Start.bat' file, it loads a virtual Python environment and run
 - Make sure your PC has a microphone (USB and built-in mics work well I think, haven't tested much else)
 - Enjoy?! 
 
-I'm surprised this works at all to be honest
+I'm surprised this works at all to be honest.
+
 Let me know if you like it or have suggestions (especially for a better name, 'SongPi' is trash lol)
 
 Cheers.
