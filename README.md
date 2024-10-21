@@ -21,19 +21,24 @@ sudo apt install python3
 python3 -m venv venv
 source venv/bin/activate
 ```
-### 3. 
-Install the required dependicies: 
+### 3. Install the required dependicies: 
 ```
 pip install pyaudio shazamio requests pillow screeninfo
 ```
 ### 4. Run SongPi
+```
+python shazam.py
+```
 
 When you're done, deactivate the virtual environment by running:
 ```
 deactivate
 ```
 
-## Less easy Windows mode setup instructions
+## Portable Windows setup instructions
+### 1. Download the 
+
+## Full Windows setup instructions
 
 ### 1. Install Python
 
@@ -46,7 +51,7 @@ Install Python 3.12.3 from the Python website: https://www.python.org/downloads/
 ### 2. Run the Setup Script
 
 Double click '1st time setup.bat' and let the script run until it finishes, if you get an error then try run it again I reckon. 
-The script creates a virtual environment in the current folder and installs four Python packages (pyaudio, shazamio, requests, and pillow screeninfo) using pip install.
+The script creates a virtual environment in Files\venv within your current folder, then installs four Python packages (pyaudio, shazamio, requests, and pillow screeninfo) using pip install.
 
 ***Once you've done the above setup the first time, you can just click the Start.bat file next time you want to run the program***
 
