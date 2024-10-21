@@ -8,8 +8,8 @@ The following versions are available:
 - Windows (portable/easy as version: zip package that is already set up, just click the .exe to run)
 - Windows (full/less easy version: installs a virtual Python environment and uses a script to run SongPi)
 
-
-## Raspberry Pi
+<details>
+   <summary><h2>Raspberry Pi</h2></summary>
 ### 1. Install Python 
 Update the package list & install Python:
 ```
