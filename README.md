@@ -9,11 +9,24 @@ The following versions are available:
 
 ## Raspberry Pi
 ### 1. Install Python 
+Update the package list:
 ```
 sudo apt update
 sudo apt upgrade
 ```
- 
+Install Python:
+```
+sudo apt install python3
+```
+Create a virtual environment in the current folder:
+```
+python3 -m venv venv
+```
+Activate the virtual Python environment:
+```
+source venv/bin/activate
+```
+
 
 ## Less easy Windows mode setup instructions
 
