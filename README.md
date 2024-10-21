@@ -9,7 +9,7 @@ The following versions are available:
 - Windows (full/less easy version: installs a virtual Python environment and uses a script to run SongPi)
 
 <details>
-   <summary><h2>Raspberry Pi</h2></summary>
+   <summary><h2>Raspberry Pi version</h2></summary>
 ### 1. Install Python 
 Update the package list & install Python:
 ```
@@ -34,6 +34,8 @@ When you're done, deactivate the virtual environment by running:
 ```
 deactivate
 ```
+</details>
+
 
 ## Portable Windows setup instructions
 ### 1. Download the zip file here:
