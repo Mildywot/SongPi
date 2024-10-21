@@ -10,6 +10,7 @@ The following versions are available:
 
 <details>
    <summary><h2>Raspberry Pi version</h2></summary>
+   
 ### 1. Install Python 
 Update the package list & install Python:
 ```
@@ -38,7 +39,7 @@ deactivate
 
 
 <details> <summary>Portable Windows setup instructions</summary>
-### 1. Download the zip file here:
+### 1. Download the folder 
 
 
 ### 2. Extract the zip and run ***SongPi.exe***
