@@ -8,33 +8,32 @@ The following versions are available:
 - Windows (portable/easy as version: zip package that is already set up, just click the .exe to run)
 - Windows (full/less easy version: installs a virtual Python environment and uses a script to run SongPi)
 
-<Raspberry Pi>
-  ## Raspberry Pi
-  ### 1. Install Python 
-  Update the package list & install Python:
-  ```
-  sudo apt update
-  sudo apt upgrade
-  sudo apt install python3
-  ```
-  ### 2. Create a virtual environment in the current folder and activate it
-  ```
-  python3 -m venv venv
-  source venv/bin/activate
-  ```
-  ### 3. Install the required dependicies: 
-  ```
-  pip install pyaudio shazamio requests pillow screeninfo
-  ```
-  ### 4. Run SongPi
-  ```
-  python shazam.py
-  ```
-  
-  When you're done, deactivate the virtual environment by running:
-  ```
-  deactivate
-  ```
+
+## Raspberry Pi
+### 1. Install Python 
+Update the package list & install Python:
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install python3
+```
+### 2. Create a virtual environment in the current folder and activate it
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+### 3. Install the required dependicies: 
+```
+pip install pyaudio shazamio requests pillow screeninfo
+```
+### 4. Run SongPi
+```
+python shazam.py
+```
+When you're done, deactivate the virtual environment by running:
+```
+deactivate
+```
 
 ## Portable Windows setup instructions
 ### 1. Download the zip file here:
