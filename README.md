@@ -37,12 +37,13 @@ deactivate
 </details>
 
 
-## Portable Windows setup instructions
+<details> <summary>Portable Windows setup instructions</summary>
 ### 1. Download the zip file here:
 
 
 ### 2. Extract the zip and run ***SongPi.exe***
 Thats it
+</details> 
 
 ## Full Windows setup instructions
 
