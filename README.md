@@ -40,7 +40,7 @@ deactivate
 <details>
    <summary><h2>Portable Windows setup instructions</h2></summary>
 
-### 1. Download the folder 
+### 1. Download the 7zip file [Here](https://github.com/Mildywot/SongPi/blob/main/SongPi%20-%20portable%20Windows/SongPi%20-%20portable%20Windows.7z)
 
 ### 2. Extract the zip and run ***SongPi.exe***
 Thats it
