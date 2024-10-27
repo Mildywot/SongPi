@@ -105,3 +105,19 @@ I'm surprised this works at all to be honest.
 Let me know if you like it or have suggestions (especially for a better name, 'SongPi' is trash lol)
 
 Cheers.
+
+## Context on how this works:
+
+1) SongPi loads the info from the config file, and sets up the environment for audio processing.
+
+2) The audio input device (microphone) is selected using the functions list_audio_devices, select_input_device, and validate_device_channels handling the detection.
+
+3) The record_audio function makes use of PyAudio's audio handling and records 4 seconds of audio from your microphone then saves it as a .WAV file (the recording time can be edited in the config, but recordings less than 3 seconds don't seem to work so well, so I settled on 4 seconds as its pretty consistent).
+
+4) The recognize_song function uses the ShazamIO api to fingerprint the recorded audio in the .WAV file, send that fingerprint to Shazam, then receive back the song info. This functions runs in an asynchronous loop to repeatedly retry every 2 seconds in case of network errors.
+
+5) Tkinter creates the GUI then displays the song title, artist and the cover art. It finds the display size of the current screen and only goes 'full screen' to the current screen (I was having issues with a multiple screen setup). I bound the escape button to toggle between full screen and windowed modes, along with having the mouse/cursor disappear after 5 seconds of inactivity (it shows again when moving the mouse). The update_images and update_gui functions only update if there are changes to the song recognition result (i.e. the GUI doesn't update if the same song or no song is detected).
+
+6) Tkinter also modifies the font and text styling (song title is italic and the artist is bold), and anchors these below the central cover art (which resizes dynamically when detecting changes to the window size). The text should always be readable regardless of background colour as the calculate_brightness function adjusts the text colour based on the background's brightness. Thanks to my mate's suggestion, I changed the background to be the current cover art with a gaussian blur using the create_blurred_background function (initially it would find the most common colour of the cover art and displayed it as a solid coloured background, it looked kind of shit as half the time it was just black or white).
+
+7) The background thread start_recognition_thread runs in the background separate to the GUI thread so it all remains responsive and usable. SongPi essentially records for 4 seconds, gets the song info back in about 1-2 seconds, then repeats the whole process every 5 seconds or so (depending on recognition its about 4-5 updates per minute).
