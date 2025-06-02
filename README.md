@@ -47,28 +47,27 @@ Examples:
     * Many aspects of the application's behaviour can be customised through the `config.json` file located in the `Files` directory.
     * Settings include audio recording parameters (format, channels, sample rate, chunk size, record seconds, device index), GUI update interval, blur strength, font sizes, history panel appearance (max items, art size, padding, offsets), network settings (timeout, retry count, retry delay), and logging preferences.
 
-## Setup & Installation
+## Running **SongPi** on Windows
+
+* Ensure you have Python installed (recommended version 3.8+), and have selected the PATH option when installing.
+* Download the latest release of **SongPi** and extract the .zip file.
+* Click the `Setup.bat` script to launch the setup process that creates a new Python virtual environment and downloads the required dependencies (via `requirements.txt`) thru PIP.
+* Once the setup script is done, click on `SongPi.py` and the app will launch, play some music to start the recognition!
+
+
+## Running **SongPi** on Linux
 
 1.  **Python:** Ensure you have Python installed (recommended version 3.8+).
-2.  **Dependencies:** Install the required Python packages. These are listed in `requirements.txt` and can typically be installed by navigating to the `v1.1` (or relevant version) directory in your terminal and running:
+2.  **Dependencies:** Install the required Python packages listed in `requirements.txt`, this can be installed by navigating to the same directory in terminal and running the following:
     ```bash
     pip install -r requirements.txt
     ```
     Key dependencies include: `pyaudio`, `shazamio`, `requests`, `Pillow`, `screeninfo`.
 3.  **Audio Input:** Make sure your PC has a working microphone or an audio input source that can capture the music you want to identify. For identifying system audio directly, you might need to configure a loopback device (like "Stereo Mix" on Windows or using software like VB-Cable).
 4.  **Configuration (Optional):**
-    * Before first run, you can review and modify `v1.1/Files/config.json`.
-    * Specifically, you might want to set `audio.device_index` if you know which input device you want to use. If left as `null`, the application will try to pick one.
+    * Before first run, you can review and modify `config.json` if you want to change anything (the default settings have worked fine in my testing).
+    * You might want to set `audio.device_index` if you know which input device you want to use. If left as `null`, the application will try to pick one.
 
-## Running the Application
-
-* Navigate to the directory containing the version you want to run (e.g., `v1.1`).
-* Click the `Setup.bat` script to launch the setup process that creates a new Python virtual environment and downloads the reqquired dependencies via PIP.
-* Alternatively, you can run it directly using Python from within the `v1.1/Files/` directory:
-    ```bash
-    python SongPi.py
-    ```
-    (Ensure your terminal's working directory is `v1.1/Files/` or adjust the path to `SongPi.py` accordingly if running from `v1.1/`).
 
 ## Troubleshooting
 
