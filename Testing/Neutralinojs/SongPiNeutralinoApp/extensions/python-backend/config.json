@@ -25,7 +25,7 @@
         "status_y_offset_ratio": 0.04
     },
     "network": {
-        "timeout": 5, // <-- Reduced from 15
+        "timeout": 5,
         "retry_count": 3,
         "retry_delay": 2
     },

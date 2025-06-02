@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282c34; /* Dark theme background */
+    color: #abb2bf; /* Light grey text */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    color: #61afef; /* Light blue for heading */
+}
+
+#coverArtContainer {
+    margin-bottom: 20px;
+}
+
+#coverArt {
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+    border: 3px solid #4f5666; /* Border for cover art */
+    object-fit: cover; /* Ensures image covers the area, might crop */
+    background-color: #3a3f4b; /* Placeholder bg if image is smaller or transparent */
+}
+
+#songInfo {
+    margin-bottom: 15px;
+}
+
+#songTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e5c07b; /* Yellowish for title */
+    margin-bottom: 5px;
+}
+
+#songArtist {
+    font-size: 1.2em;
+    color: #98c379; /* Greenish for artist */
+    margin-bottom: 15px;
+}
+
+#statusMessage {
+    font-size: 0.9em;
+    color: #c678dd; /* Purplish for status */
+    margin-bottom: 20px;
+    min-height: 20px; /* Reserve space */
+    padding: 5px;
+    border: 1px dashed #4f5666;
+    background-color: #31353f;
+}
+
+button {
+    background-color: #61afef; /* Light blue button */
+    color: #282c34; /* Dark text on button */
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #529bcf;
+}
+
+#songHistory {
+    width: 100%;
+    border-top: 1px solid #4f5666;
+    padding-top: 15px;
+}
+
+#songHistory h2 {
+    font-size: 1.2em;
+    color: #61afef;
+    margin-bottom: 10px;
+}
+
+/* Placeholder for history items */
+.historyItem {
+    background-color: #31353f;
+    border: 1px solid #4f5666;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.historyItem p {
+    margin: 3px 0;
+}

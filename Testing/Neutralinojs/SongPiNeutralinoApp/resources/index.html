@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SongPi Neutralino</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SongPi</h1>
+
+        <div id="coverArtContainer">
+            <img id="coverArt" src="icons/appIcon.png" alt="Cover Art">
+        </div>
+
+        <div id="songInfo">
+            <div id="songTitle">---</div>
+            <div id="songArtist">---</div>
+        </div>
+
+        <div id="statusMessage">App Initialized. Click button to test backend.</div>
+
+        <button id="testBackendButton">Test Python Backend (get_song_info_stub)</button>
+
+        <div id="songHistory">
+            <h2>History</h2>
+            <!-- History items will be populated here by script.js -->
+        </div>
+    </div>
+
+    <script src="js/neutralino.js"></script> <!-- Path from neutralino.config.json -->
+    <script src="js/main.js"></script> <!-- Assumed name for script.js -->
+</body>
+</html>
