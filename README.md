@@ -13,6 +13,10 @@ SongPi is a Python application that listens to audio playing around your compute
     * Text colour (black or white) is dynamically chosen based on the background's brightness to ensure readability.
 5.  **Continuous Operation:** The app periodically repeats this process, automatically updating the display if a new song is detected.
 
+Examples:
+![Alt text for your image](readme_images/Landscape_bright.png)
+
+
 ## Key Features
 
 * **Automatic Song Identification:** "Always-on" recognition that listens for music and updates the display in real-time.
