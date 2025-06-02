@@ -14,8 +14,9 @@ SongPi is a Python application that listens to audio playing around your compute
 5.  **Continuous Operation:** The app periodically repeats this process, automatically updating the display if a new song is detected.
 
 Examples:
-![Alt text for your image](readme_images/Landscape_bright.png)
-
+![Landscape view 1](readme_images/Landscape_bright.png)
+![Landscape view 2](readme_images/Landscape_dark.png)
+![Portrait view](readme_images/Portrait.png)
 
 ## Key Features
 
