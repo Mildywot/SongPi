@@ -63,7 +63,7 @@ Examples:
 ## Running the Application
 
 * Navigate to the directory containing the version you want to run (e.g., `v1.1`).
-* You may have a `Start.bat` (or similar) script to launch the application.
+* Click the `Setup.bat` script to launch the setup process that creates a new Python virtual environment and downloads the reqquired dependencies via PIP.
 * Alternatively, you can run it directly using Python from within the `v1.1/Files/` directory:
     ```bash
     python SongPi.py
