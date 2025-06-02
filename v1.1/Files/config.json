@@ -1,0 +1,37 @@
+{
+    "audio": {
+        "format": "paInt16",
+        "channels": 1,
+        "sample_rate": 48000,
+        "chunk_size": 8192,
+        "record_seconds": 4,
+        "device_index": null
+    },
+    "gui": {
+        "update_interval_ms": 5000,
+        "blur_strength": 15,
+        "border_size_ratio": 0.15,
+        "base_font_size": 12,
+        "history_max_items": 5,
+        "history_art_size": 60,
+        "history_item_padding": 10,
+        "history_x_offset": 20,
+        "history_y_offset": 20,
+        "history_font_size_ratio": 0.7,
+        "history_min_side_width": 300,
+        "layout_side_min_buffer": 50,
+        "layout_below_min_buffer": 50,
+        "status_font_size_ratio": 0.8,
+        "status_y_offset_ratio": 0.04
+    },
+    "network": {
+        "timeout": 5, // <-- Reduced from 15
+        "retry_count": 3,
+        "retry_delay": 2
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "%(asctime)s - %(levelname)s - [%(threadName)s] - %(message)s",
+        "datefmt": "%Y-%m-%d %H:%M:%S"
+    }
+}
