@@ -1,123 +1,93 @@
-# SongPi - Song Recognition app written in Python
+# SongPi - Automatic Song Recognition & Visualiser
 
-I wanted a program that could run continuously to recognise songs I'd play on vinyl records: 
-- couldn't find one
-- tried to make one (cheers ChatGPT for the help)
-- somehow works?!
+SongPi is a Python application that listens to audio playing around your computer (or through a specified microphone), automatically identifies the song, and displays its title, artist, and cover art in a sleek, dynamic interface. It uses Shazamio for the core recognition functionality and Tkinter for the graphical user interface.
 
-This project sets up a Python environment for recognizing songs using Shazamio, displaying album art with a blurred background, and dynamically adjusting text color based on background brightness. 
-It uses Tkinter for the GUI and PyAudio for recording audio.
+## How It Works
 
-The following versions are available: 
-- Raspberry Pi
-- Windows (portable/easy as version: zip package that is already set up, just click the .exe to run)
-- Windows (full/less easy version: installs a virtual Python environment and uses a script to run SongPi)
+1.  **Audio Capture:** SongPi records a short audio snippet (typically a few seconds) from your computer's selected audio input device. The recording parameters like duration, sample rate, and device can be configured.
+2.  **Recognition:** The captured audio is sent to Shazam (via the Shazamio library) to identify the song.
+3.  **Information Retrieval:** If a match is found, the application fetches metadata including the song's title, artist, and URLs for the cover art.
+4.  **Dynamic Display:**
+    * The cover art is displayed prominently, with a larger, blurred version of it serving as the window background.
+    * The song title and artist are overlaid on the display.
+    * Text colour (black or white) is dynamically chosen based on the background's brightness to ensure readability.
+5.  **Continuous Operation:** The app periodically repeats this process, automatically updating the display if a new song is detected.
 
-<details>
-   <summary><h2>Raspberry Pi version</h2></summary>
+## Key Features
 
-### 1. Grab songpi.py and config.json file from [here](https://github.com/Mildywot/SongPi/tree/67d5aef5c0a94f321f2f83b06a3344e9e8749d90/SongPi%20-%20Pi%20version) and chuck them in a new folder
+* **Automatic Song Identification:** "Always-on" recognition that listens for music and updates the display in real-time.
+* **Immersive Visuals:**
+    * Fullscreen (or windowed) display focusing on the current song's album art.
+    * Blurred album art background for an aesthetic look.
+    * Adaptive text colouring ensures song title and artist are always clear.
+    * Font sizes adjust dynamically for optimal viewing based on window size.
+* **Song History:**
+    * Keeps track of recently identified songs and displays them in a history panel.
+    * **Smart Layout:** The history panel intelligently positions itself:
+        * To the **left** of the main cover art in wider (landscape) windows.
+        * **Below** the main song details in taller (portrait) windows or when side space is limited.
+    * Cover art for history items is cached locally for quick access and to minimise downloads.
+    * A persistent text log (`song_history.log`) is maintained in the application's root directory, recording the timestamp, artist, and title of each recognised song.
+    * Manages disk space by automatically cleaning up older cached history images.
+* **State Persistence:**
+    * Remembers the last successfully identified song (including its title, artist, and cover art path).
+    * Restores and displays this last known song when the application starts up.
+* **Audio Input Management:**
+    * Allows manual selection of the audio input device index via `config.json`.
+    * If no device is specified or the configured one is invalid, SongPi attempts to auto-select a suitable input device.
+* **User Interface Controls:**
+    * Toggle between fullscreen and windowed mode by pressing the `Esc` key.
+    * The mouse cursor automatically hides after a few seconds of inactivity and reappears on movement.
+* **Highly Configurable:**
+    * Many aspects of the application's behaviour can be customised through the `config.json` file located in the `Files` directory.
+    * Settings include audio recording parameters (format, channels, sample rate, chunk size, record seconds, device index), GUI update interval, blur strength, font sizes, history panel appearance (max items, art size, padding, offsets), network settings (timeout, retry count, retry delay), and logging preferences.
 
-### 2. Install Python 
-In terminal, update the package list & install Python:
-```
-sudo apt update
-sudo apt upgrade
-sudo apt install python3
-```
-### 3. Create a virtual environment in the current folder and activate it
-```
-python3 -m venv venv
-source venv/bin/activate
-```
-### 4. Install the required dependicies: 
-```
-pip install pyaudio shazamio requests pillow screeninfo
-```
-### 5. Run SongPi
-```
-python shazam.py
-```
-When you're done, deactivate the virtual environment by running:
-```
-deactivate
-```
-</details>
+## Setup & Installation
 
-<details>
-   <summary><h2>Portable Windows setup instructions</h2></summary>
+1.  **Python:** Ensure you have Python installed (recommended version 3.8+).
+2.  **Dependencies:** Install the required Python packages. These are listed in `requirements.txt` and can typically be installed by navigating to the `v1.1` (or relevant version) directory in your terminal and running:
+    ```bash
+    pip install -r requirements.txt
+    ```
+    Key dependencies include: `pyaudio`, `shazamio`, `requests`, `Pillow`, `screeninfo`.
+3.  **Audio Input:** Make sure your PC has a working microphone or an audio input source that can capture the music you want to identify. For identifying system audio directly, you might need to configure a loopback device (like "Stereo Mix" on Windows or using software like VB-Cable).
+4.  **Configuration (Optional):**
+    * Before first run, you can review and modify `v1.1/Files/config.json`.
+    * Specifically, you might want to set `audio.device_index` if you know which input device you want to use. If left as `null`, the application will try to pick one.
 
-### 1. Download the 7zip file [Here](https://github.com/Mildywot/SongPi/tree/e9b0c92b65746b96c6b84673acddd6d015b774a9/SongPi%20-%20portable%20Windows)
-(normal zip file wouldn't go smaller than 25MB for GitHub lol)
+## Running the Application
 
+* Navigate to the directory containing the version you want to run (e.g., `v1.1`).
+* You may have a `Start.bat` (or similar) script to launch the application.
+* Alternatively, you can run it directly using Python from within the `v1.1/Files/` directory:
+    ```bash
+    python SongPi.py
+    ```
+    (Ensure your terminal's working directory is `v1.1/Files/` or adjust the path to `SongPi.py` accordingly if running from `v1.1/`).
 
-### 2. Extract the file and run ***SongPi.exe***
-Enjoy 
-</details> 
+## Troubleshooting
 
+* **No Audio Devices Found / Cannot Open Device:**
+    * Ensure your microphone/input device is properly connected and enabled in your system settings.
+    * Check the `audio.device_index` in `config.json`. Try setting it to `null` to let the app auto-select, or use a tool to list audio devices and find the correct index for your desired input. The application logs available devices if it fails to find a suitable one.
+* **Recognition Fails:**
+    * Ensure the audio is clear and loud enough.
+    * Check your internet connection, as recognition requires communication with Shazam's servers.
+    * Look at the application logs or console output for error messages from Shazamio or network requests.
 
-<details>
-   <summary><h2>Full Windows setup instructions</h2></summary>
+---
 
-### 1. Download and extract the full Windows version from the releases section
+## What's New in v1.1 (Latest Version)
 
+Version 1.1 introduces significant enhancements over previous versions, focusing on user experience, reliability, and new functionalities:
 
-### 2. Install Python
-
-Install Python 3.12.3 from the Python website: https://www.python.org/downloads/release/python-3123/ 
-(other Python versions probably work fine, just haven't tested them)
-
-***Make sure that you select the 'add python.exe to PATH' option during the install.***
-
-
-### 3. Run the Setup Script
-
-Double click '1st time setup.bat' and let the script run until it finishes, if you get an error then try run it again I reckon. 
-The script creates a virtual environment in Files\venv within your current folder, then installs four Python packages (pyaudio, shazamio, requests, and pillow screeninfo) using pip install.
-
-***Once you've done the above setup the first time, you can just click the Start.bat file next time you want to run the program***
-
-
-### 4. Run the script
-
-Double click the 'Start.bat' file, it loads a virtual Python environment and runs the SongPi code for you.
-</details> 
-
-# Examples:
-## Windowed
-<img src="readme_images/Oshun-El-eee_windowed.png" style="width: 100%;" alt="Click to see the source">
-
-<img src="readme_images/banger_windowed.png" style="width: 100%;" alt="Click to see the source">
-
-## Full screen
-<img src="readme_images/JVB_fullscreen.png" style="width: 100%;" alt="Click to see the source">
-
-<img src="readme_images/divorced-aussie-dad-tunes_fullscreen.png" style="width: 100%;" alt="Click to see the source">
-
-## Tips:
-
-- Press Esc button to toggle between full screen and windowed mode, feel free to resize the window to your heart's content.
-- Make sure your PC has a microphone (USB and built-in mics work well I think, haven't tested much else)
-- Enjoy?! 
-
-I'm surprised this works at all to be honest.
-
-Let me know if you like it or have suggestions (especially for a better name, 'SongPi' is trash lol)
-
-Cheers.
-
-## Context on how this works:
-
-1) SongPi loads the info from the config file, and sets up the environment for audio processing.
-
-2) The audio input device (microphone) is selected using the functions list_audio_devices, select_input_device, and validate_device_channels handling the detection.
-
-3) The record_audio function makes use of PyAudio's audio handling and records 4 seconds of audio from your microphone then saves it as a .WAV file (the recording time can be edited in the config, but recordings less than 3 seconds don't seem to work so well, so I settled on 4 seconds as its pretty consistent).
-
-4) The recognize_song function uses the ShazamIO api to fingerprint the recorded audio in the .WAV file, send that fingerprint to Shazam, then receive back the song info. This functions runs in an asynchronous loop to repeatedly retry every 2 seconds in case of network errors.
-
-5) Tkinter creates the GUI then displays the song title, artist and the cover art. It finds the display size of the current screen and only goes 'full screen' to the current screen (I was having issues with a multiple screen setup). I bound the escape button to toggle between full screen and windowed modes, along with having the mouse/cursor disappear after 5 seconds of inactivity (it shows again when moving the mouse). The update_images and update_gui functions only update if there are changes to the song recognition result (i.e. the GUI doesn't update if the same song or no song is detected).
-
-6) Tkinter also modifies the font and text styling (song title is italic and the artist is bold), and anchors these below the central cover art (which resizes dynamically when detecting changes to the window size). The text should always be readable regardless of background colour as the calculate_brightness function adjusts the text colour based on the background's brightness. Thanks to my mate's suggestion, I changed the background to be the current cover art with a gaussian blur using the create_blurred_background function (initially it would find the most common colour of the cover art and displayed it as a solid coloured background, it looked kind of shit as half the time it was just black or white).
-
-7) The background thread start_recognition_thread runs in the background separate to the GUI thread so it all remains responsive and usable. SongPi essentially records for 4 seconds, gets the song info back in about 1-2 seconds, then repeats the whole process every 5 seconds or so (depending on recognition its about 4-5 updates per minute).
+* **Revamped Song History:**
+    * Visually displays a list of recently recognised songs within the app.
+    * Intelligently adapts its layout (side or below main info) based on window dimensions.
+    * Caches cover art for history items and maintains a persistent `.log` file of all recognised tracks.
+* **State Persistence:** The app now remembers the last identified song and restores it upon restarting.
+* **Smarter Audio Device Handling:** Includes improved automatic selection of audio input devices if not explicitly configured or if the set device is invalid.
+* **Enhanced Visuals & Layout:** More dynamic font scaling and more robust GUI updates. Placeholder images are shown if cover art is unavailable.
+* **Expanded Configuration:** More options in `config.json` to customise the history panel, logging behaviour, and more.
+* **Improved Reliability:** Features comprehensive logging for easier troubleshooting, a more graceful shutdown process, and safer file operations.
+* **Code Quality:** Significant code refactoring for better readability, maintainability, and the introduction of type hinting.
